@@ -35,13 +35,16 @@
 			
 			<div>
 				Date: [[${transaction.date}]]
-				</div>
-			<div>
+			</div>
+			<div th:if="${transaction.type == 'C'}">
+				Amount: -[[${transaction.amount}]]
+			</div>
+			<div th:if="${transaction.type == 'D'}">
 				Amount: [[${transaction.amount}]]
-				</div>
+			</div>
 			<div>
 				Description: [[${transaction.description}]]
-				</div>
+			</div>
 			<div>
 			<a th:href="@{/transactions}" th:if="${transaction.id != null}">back</a>
 			</div>
